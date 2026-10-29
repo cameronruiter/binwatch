@@ -9,7 +9,7 @@
 | 🌐 **Live app** | [binwatch.streamlit.app](https://binwatch.streamlit.app) |
 | 📦 **Code repository** | [github.com/cameronruiter/binwatch](https://github.com/cameronruiter/binwatch) |
 | ⚖️ **Ethical reflection (data card)** | [DATA_CARD.md](DATA_CARD.md) |
-| 🎞️ **Presentation** | *link to follow* |
+| 🎞️ **Presentation** | [BinWatch slides (PDF)](BinWatch_slides_final.pptx.pdf) |
 | 🌍 **SDG 15** | [sdgs.un.org/goals/goal15](https://sdgs.un.org/goals/goal15) |
 
 ## What it does
