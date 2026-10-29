@@ -2,18 +2,20 @@
 
 **BinWatch** | AI for Good, Hackathon 7 "Eyes on Earth" | SDG 15 | Cameron Ruiter and Nina Borutyńska
 
+**Back to:** [README](README.md) | **Live app:** [binwatch.streamlit.app](https://binwatch.streamlit.app) | **Presentation:** [BinWatch slides (PDF)](BinWatch_slides_final.pptx.pdf)
+
 ## Data card
 
 | | |
 |---|---|
 | **What** | Photos of underground rubbish containers in The Hague and the area around them |
-| **How** | 7 videos we filmed ourselves with our phones in October 2026, day, evening and night, at a few streets in The Hague. We took 3–4 frames per second and removed blurry and near-duplicate frames. |
+| **How** | 7 videos we filmed ourselves with our phones in October 2026, in daylight only, at a few streets in The Hague: 5 on 27 October, plus 2 extra for torn bags and closed bags. We took 3–4 frames per second and removed blurry and near-duplicate frames. |
 | **Labels** | `bag`, `torn_bag`, `loose_litter`, `dumped_item`, with boxes drawn by hand in Roboflow. Cameron did the labelling with help from Claude (an AI assistant) and checked the results. Photos of clean bins are kept with no boxes, so the model also learns "nothing to do". |
 | **Size** | 300 labelled images, split 211 train / 60 validation / 29 test. About 23 of them are clean bins. |
 | **Privacy** | We never labelled people, cars or bikes. 21 frames with a readable number plate were removed. The original videos are not published. |
 | **Model** | Roboflow RF-DETR (Small), trained in Roboflow |
 
-**Limits:** only a few streets in one city, only autumn (gulls are worst in spring and summer), not many torn bags (the most important class), and WhatsApp made the videos less sharp.
+**Limits:** only a few streets in one city, only daylight (we have no night photos, so we don't know how it works in the dark), only autumn (gulls are worst in spring and summer), not many torn bags (the most important class), and WhatsApp made the videos less sharp.
 
 ## Results and how honest they are
 
@@ -36,7 +38,7 @@ These numbers look better than they really are:
 ## Where it can go wrong
 
 - **It sees damage, not the cause.** A bag torn by a rat looks the same as one torn by a gull, so it can't be used to count gull damage. Using it as evidence against gulls would also be unfair: wild birds, including gulls, are protected in the Netherlands.
-- **It misses things.** In the dark, with small litter, or when a bag is just outside the photo. Then a dirty bin gets "Clean" and has to wait, which is the worst mistake it can make. A wrong "Clear first" only costs a short trip. So BinWatch should help decide the order of the route, not replace it.
+- **It misses things.** With small litter, or when a bag is just outside the photo. Then a dirty bin gets "Clean" and has to wait, which is the worst mistake it can make. A wrong "Clear first" only costs a short trip. So BinWatch should help decide the order of the route, not replace it.
 
 ## Who takes the photos
 
@@ -51,6 +53,6 @@ Our choice has risks too:
 ## What we did and what's next
 
 **Done:** removed number plate frames, added clean-bin photos, tested the app on a new photo, and the app itself says it's only a hint for route planning, never proof for fines.
-**Next:** test on bins we never filmed for training, automatic blurring, more torn bags from different bins, film in spring and summer, test night photos separately.
+**Next:** test on bins we never filmed for training, automatic blurring, more torn bags from different bins, film in spring and summer, film at night too.
 
 **Who did what.** Cameron and Nina filmed the videos. Cameron labelled the data, trained the model and built and deployed the app, with Claude helping with the labelling and the app code. Nina wrote the README, this ethical reflection and the slides, with Claude helping with the texts and slides.
